@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="utf-8">
+    <title>Internet High Five</title>
+    <meta name="author" content="Turk">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content='Do you feel like high five emojis are missing that special "something" you get from slapping a real-life hand so hard it stings? This won&apos;t help with that.'>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.internethighfive.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Internet High Five">
+    <meta property="og:description" content='Do you feel like high five emojis are missing that special "something" you get from slapping a real-life hand so hard it stings? This won&apos;t help with that.'>
+    <meta property="og:image" content="https://www.internethighfive.com/images/HAND-LEFT-W-TEXT.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="internethighfive.com">
+    <meta property="twitter:url" content="https://www.internethighfive.com/">
+    <meta name="twitter:title" content="Internet High Five">
+    <meta name="twitter:description" content='Do you feel like high five emojis are missing that special "something" you get from slapping a real-life hand so hard it stings? This won&apos;t help with that.'>
+    <meta name="twitter:image" content="https://www.internethighfive.com/images/HAND-LEFT-W-TEXT.png">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9GX3X84PW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S9GX3X84PW');
+    </script>
+
+    <!-- Other Includes -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function play_audio() {
+            try {
+                var audio = document.getElementById("sound_effect");
+                audio.play();
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+        $(function() {
+            $(".high5 img").click(function() {
+                play_audio();
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass("flash");
+                    setTimeout(function() {
+                        el.removeClass("flash");
+                    }, 250);
+                }, 100);
+            });
+        });
+    </script>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+        .fill {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+        .container {
+            height: 100%;
+            position: relative;
+        }
+        .high5 {
+            height: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            min-height: 480px;
+            position: absolute;
+        }
+        .high5>* {
+            height: 100%;
+        }
+        .high5>*:hover {
+            filter: invert(21%) sepia(8%) saturate(43%) hue-rotate(359deg) brightness(95%) contrast(101%) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+            cursor: pointer;
+        }
+        .flash {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(105%) !important;
+        }
+    </style>
+  </head>
+
+  <body class="text-center">
+    <div class="container fill">
+        <div class="high5">
+            <img class="img-fluid" alt="Internet High Five" src="images/hand-left-w-text.svg" />
+        </div>
+    </div>
+    <audio id="sound_effect" class="audio_player" preload="auto" style="display: none;" type="audio/wav" src="sfx/clap.mp3"></audio>      
+  </body>
+</html>

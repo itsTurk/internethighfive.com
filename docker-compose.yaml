@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  internethighfive-web:
+    build: .
+    image: epic/internethighfive
+    ports:
+      - "3010:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "128M"
+
+networks:
+  app:
